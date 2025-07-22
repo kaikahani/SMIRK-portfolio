@@ -78,6 +78,7 @@ export default createGlobalStyle`
     font-size: 7.5rem;
     line-height: .7166666667;
     font-weight: 900;
+    font-family: serif;
   }
 
   a {
