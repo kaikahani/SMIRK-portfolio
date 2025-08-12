@@ -9,7 +9,7 @@ export const ContactSection = styled(motion.section)`
   align-items: center;
   justify-content: space-between;
   padding: 0 32px 285px;
-  color: ${({ theme }) => theme.colors.red};
+  color: ${({ theme }) => theme.colors.saffron};
   /* opacity: 1; */
   transform: translate3d(0, 60px, 0);
   /* transition: opacity 1s ease, transform 1s cubic-bezier(0, 0.7, 0.29, 0.97);

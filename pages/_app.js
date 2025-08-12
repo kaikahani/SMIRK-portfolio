@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ThemeProvider } from 'styled-components';
 import { ThemeContextProvider, useThemeContext } from '../context/theme';
 import { CursorContextProvider } from '../context/cursor';
@@ -10,7 +11,7 @@ import lightTheme from '../styles/themes/light';
 import AppBar from '../components/AppBar';
 import Cursor from '../components/Cursor';
 import Menu from '../components/Menu';
-import SiteOfTheDay from '../components/SiteOfTheDay';
+
 
 const themes = {
   dark: darkTheme,
@@ -32,10 +33,23 @@ const ThemedApp = ({ children }) => {
 const Header = () => <AppBar direction="down" renderAs="header" />;
 
 const App = ({ Component, pageProps }) => {
+  const router = useRouter();
+  const hideCursorOnLM = router.pathname.includes('/projects/lemon-meringue');
+  const showCursorOnFooter =
+    router.pathname.includes('/projects/lemon-meringue') &&
+    pageProps?.showFooterCursor;
+
+  <Cursor
+    hidden={
+      !showCursorOnFooter &&
+      router.pathname.includes('/projects/lemon-meringue')
+    }
+  />;
+
   return (
     <>
       <Head>
-        <title>Awwwards Rebuilt - Furrow Studio</title>
+        <title>{pageProps?.customTitle || 'SMiRK Creative Studio'}</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="stylesheet" href="https://use.typekit.net/yzi3byl.css" />
       </Head>
@@ -65,8 +79,8 @@ const App = ({ Component, pageProps }) => {
               <Header />
               <Menu />
               <Component {...pageProps} />
-              <Cursor />
-              <SiteOfTheDay />
+              <Cursor hidden={hideCursorOnLM} />
+              {/* <SiteOfTheDay /> */}
             </ThemedApp>
           </CursorContextProvider>
         </MenuContextProvider>

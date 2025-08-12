@@ -3,6 +3,6 @@ import base from './base';
 
 export default {
   ...base,
-  text: colors.black,
-  background: colors.white,
+  text: colors.white,
+  background: colors.black,
 };

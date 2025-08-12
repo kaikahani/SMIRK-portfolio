@@ -37,15 +37,22 @@ const About = () => {
       <ContentSection>
         <TextWrapper>
           <h2>
-            Furrow is an integrated, full-service creative studio offering video
-            production, creative development, and post-production services.
+            SMiRK is a creative direction agency sparking joy and helping
+            artists create art that reflects who they truly are.
           </h2>
           <p>
-            Everybody’s got a story. And we don’t stop until we’ve uncovered
-            what makes yours worth telling. Whether it’s working directly with
-            you, an agency partner, or putting the finishing touches on
-            something special, we’re ready to dig in and get our hands dirty—are
-            you?
+            At SMiRK, we don&apos;t stop until we uncover what makes your story
+            unforgettable. We help artists move out of their own way and into
+            their creative power. Whether it&apos;s creative direction, content
+            production, brand strategy, or rollout support, we meet you where
+            you are. We work with artists, agencies, and teams ready to push
+            boundaries and build something real.
+            <br />
+            <br />
+            Our goal?
+            <br />
+            <br />
+            To place autonomy back into the hands of artists everywhere.
           </p>
         </TextWrapper>
         <ServicesWrapper>

@@ -35,7 +35,7 @@ const Banner = () => {
     <BannerSection style={{ height: windowSize.height }}>
       <VideoContainer>
         <video
-          src="/videos/banner.mp4"
+          src="/videos/lmbumpnc.mp4"
           height="100%"
           width="100%"
           loop
@@ -57,8 +57,10 @@ const Banner = () => {
         initial="initial"
         animate="animate"
       >
-        <motion.span variants={itemTitleAnimation}>DIG</motion.span>
-        <motion.span variants={itemTitleAnimation}>DEEP</motion.span>
+        <motion.span variants={itemTitleAnimation}>KILL</motion.span>
+        <motion.span variants={itemTitleAnimation}>
+          MONO<span style={{ color: '#FE0200', display: 'inline' }}>TONY</span>
+        </motion.span>
       </BannerTitle>
     </BannerSection>
   );

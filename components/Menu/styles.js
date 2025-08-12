@@ -7,7 +7,7 @@ import DefaultSocialMedia from '../SocialMedia';
 import MenuButton from '../MenuButton';
 
 export const Backdrop = styled(DefaultBackdrop)`
-  background: ${({ theme }) => theme.colors.red};
+  background: ${({ theme }) => theme.colors.saffron};
   color: ${({ theme }) => theme.background};
 `;
 
@@ -188,7 +188,7 @@ export const VideoReveal = styled(motion.div)`
   left: 0;
   will-change: width;
   transform: translateZ(0);
-  background: ${({ theme }) => theme.colors.red};
+  background: ${({ theme }) => theme.colors.saffron};
 `;
 
 export const Video = styled(motion.video)`

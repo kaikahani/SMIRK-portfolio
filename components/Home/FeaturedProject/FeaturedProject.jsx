@@ -75,7 +75,7 @@ const FeaturedProject = () => {
     <ContentSection>
       <AnimateOnScreen>
         <motion.div>
-          <Link href="/projects/not-humble" passHref>
+          <Link href="projects/lemon-meringue" passHref>
             <ProjectAnchor
               onHoverStart={handleAnchorHoverStart}
               onHoverEnd={handleAnchorHoverEnd}
@@ -88,18 +88,18 @@ const FeaturedProject = () => {
                   transition={transition}
                   className="project-info"
                 >
-                  <h4>PEI Seafood</h4>
-                  <h4>2019</h4>
+                  <h4>Coming Soon</h4>
+                  <h4>2025</h4>
                 </motion.div>
                 <ProjectTitle>
-                  NOT <br /> HUMBLE
+                  LEMON <br /> MERINGUE
                   <span className="arrow">
                     <Arrow animate={controlsArrow} transition={transition} />
                   </span>
                 </ProjectTitle>
               </ProjectInfo>
               <VideoPreview>
-                <video loop autoPlay muted src="videos/featured-video.mp4" />
+                <video loop autoPlay muted src="videos/lmreel.mp4" />
               </VideoPreview>
             </ProjectAnchor>
           </Link>

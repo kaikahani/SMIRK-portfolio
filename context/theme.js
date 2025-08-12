@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 
-const storageKey = '@AwwwardsRebuilt:Theme';
+const storageKey = '@SmirkPortfolio:Theme';
 
 const INITIAL_STATE = {
   theme: 'dark',

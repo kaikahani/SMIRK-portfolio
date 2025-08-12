@@ -1,46 +1,66 @@
+/* components/Cursor/styles.js */
 import styled, { css } from 'styled-components';
 
 export const StyledCursor = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 36px;
-  height: 36px;
-  margin: -18px 0 0 -18px;
-  border: 18px solid ${({ theme }) => theme.text};
-  border-radius: 100%;
-  transform: translate3d(-100%, -100%, 0);
-  transition: all 0.1s ease-out;
-  transition-property: width, height, border;
-  will-change: width, height, transform, border;
+  transform: translate3d(-50%, -50%, 0);
   pointer-events: none;
-  z-index: ${({ theme }) => theme.zIndex.cursor};
+  z-index: 2147483647;
+  will-change: transform;
 
-  ${({ color }) => {
-    // overrides default theme color
-    return (
-      color &&
-      css`
-        border: 18px solid ${color};
-      `
-    );
-  }};
+  /* Default white circle (original look) */
+  ${({ cursorType }) =>
+    (!cursorType || cursorType === 'default') &&
+    css`
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+    `}
 
-  ${({ bordered, color, theme }) => {
-    // create a bordered style when hovering elements
-    return (
-      bordered &&
-      css`
-        width: 64px;
-        height: 64px;
-        margin: -32px 0 0 -32px;
-        border-width: 5px;
-        border-color: ${color || theme.text};
-      `
-    );
-  }};
+  ${({ bordered }) =>
+    bordered &&
+    css`
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+    `}
 
-  @media (hover: none) and (pointer: coarse) {
-    display: none;
-  }
+  /* Play variant */
+  ${({ cursorType }) =>
+    cursorType === 'play' &&
+    css`
+      width: auto;
+      height: auto;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: transparent;
+      box-shadow: none;
+      mix-blend-mode: difference;
+      font-weight: 700;
+      font-size: 14px;
+      color: #f5c242;
+      &:after {
+        content: 'Play ▶';
+      }
+    `}
+
+  /* Close variant */
+  ${({ cursorType }) =>
+    cursorType === 'close' &&
+    css`
+      width: auto;
+      height: auto;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      &:after {
+        content: 'Close ✕';
+      }
+    `}
 `;

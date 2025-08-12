@@ -8,11 +8,15 @@ const Content = () => {
       <ContentSection>
         <TextWrapper>
           <Text>
-            Great stories don’t just happen—
+            We have to kill monotony—
             <br />
-            they need to be uncovered. And we dig deep to discover the great
-            stories that lie just below the surface. Dirt under our fingernails
-            and all.
+            before it destroys our creativity.
+            <br />
+            It&apos;s everywhere. Polished sameness masquerading as genius. We&apos;re not
+            here for formulas. We&apos;re here to inspire.
+            <br />
+            <br />
+            Let&apos;s build something unforgettable.
           </Text>
         </TextWrapper>
       </ContentSection>

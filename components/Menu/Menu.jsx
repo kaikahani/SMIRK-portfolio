@@ -40,7 +40,7 @@ const Menu = () => {
   const [revealVideo, setRevealVideo] = React.useState(null);
   const [isHovering, setIsHovering] = React.useState(false);
   const theme = useStyledTheme();
-  const [{ isMenuOpen }] = useMenuContext();
+  const [{ isMenuOpen }, dispatch] = useMenuContext();
   const {
     addCursorBorder,
     removeCursorBorder,
@@ -78,17 +78,13 @@ const Menu = () => {
         const offset = 256;
         const { width } = containerRef.current.getBoundingClientRect();
         const left = (window.innerWidth - width) / 2 + offset;
-
         videoContainerRef.current.style.left = `${left}px`;
       }
     };
 
     handleResize();
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, [isMenuOpen]);
 
   return (
@@ -100,6 +96,7 @@ const Menu = () => {
               <h3>Projects</h3>
               <CloseButton title="Close" />
             </Header>
+
             <Navigation>
               <List
                 variants={listVariants}
@@ -112,17 +109,16 @@ const Menu = () => {
                   <motion.li
                     key={route.id}
                     variants={listItemsVariants}
-                    transition={{
-                      duration: 0.9,
-                      ease: transition.ease,
-                    }}
+                    transition={{ duration: 0.9, ease: transition.ease }}
                   >
-                    <NextLink href={route.path}>
+                    <NextLink href={route.path} legacyBehavior passHref>
                       <Link
-                        key={`${route.id}_${isMobile}`}
                         name={route.id}
                         onHoverStart={handleHoverStart}
                         onHoverEnd={handleHoverEnd}
+                        onClick={() =>
+                          dispatch({ type: 'TOGGLE_MENU', payload: false })
+                        }
                         custom={{ isMobile, color: theme.text }}
                         initial="initial"
                         whileHover="hover"
@@ -139,26 +135,27 @@ const Menu = () => {
                 ))}
               </List>
             </Navigation>
+
             <Footer>
               <FooterText
                 className="link"
                 as="a"
-                href="mailto:info@furrow.studio"
+                href="mailto:smirk.ca@gmail.com"
                 onMouseEnter={addCursorBorder}
                 onMouseLeave={removeCursorBorder}
               >
-                info@furrow.studio
+                SMiRK.ca@gmail.com
               </FooterText>
               <FooterText
                 className="link"
                 as="a"
-                href="tel:+1.902.417.0634"
+                href="tel:+1.925.483.4553"
                 onMouseEnter={addCursorBorder}
                 onMouseLeave={removeCursorBorder}
               >
-                +1.902.417.0634
+                +1.925.483.4553
               </FooterText>
-              <FooterText className="copyright">© Furrow 2020</FooterText>
+              <FooterText className="copyright">© SMiRK 2025</FooterText>
               {isMobile && (
                 <Address>
                   <FooterText>
@@ -169,6 +166,7 @@ const Menu = () => {
               <SocialMedia />
             </Footer>
           </Container>
+
           {!isMobile && (
             <VideoContainer ref={videoContainerRef}>
               <VideoReveal
@@ -187,7 +185,8 @@ const Menu = () => {
                   transition={transition}
                   loop
                   autoPlay
-                ></Video>
+                  muted
+                />
               ))}
             </VideoContainer>
           )}

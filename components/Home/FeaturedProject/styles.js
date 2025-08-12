@@ -142,7 +142,7 @@ export const MenuContainer = styled(motion.div)`
 
 export const MenuButton = styled(DefaultMenuButton)`
   width: calc(25% - 30px);
-  background-color: ${({ theme }) => theme.colors.red};
+  background-color: ${({ theme }) => theme.colors.saffron};
 
   &::before,
   &::after {

@@ -43,7 +43,7 @@ const Logo = props => {
       <path
         role="button"
         d="M98.045 11.358c0 4.162-3.313 7.536-7.4 7.536-4.088 0-7.4-3.374-7.4-7.536 0-4.162 3.312-7.536 7.4-7.536 4.087 0 7.4 3.374 7.4 7.536"
-        fill={theme.colors.red}
+        fill={theme.colors.saffron}
         onMouseEnter={() => addCursorColor(theme.text)}
         onMouseLeave={resetCursorColor}
         onClick={handleToggleTheme}

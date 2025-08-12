@@ -1,6 +1,26 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+    @font-face {
+  font-family: 'Leadgen';
+  src: url('/fonts/Leadgen.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+  @font-face {
+  font-family: 'calibre';
+  src: url('/fonts/calibretest-Black.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -18,8 +38,9 @@ export default createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-family: sans-serif;
-    font-family: calibre, sans-serif;
+    font-family: 'Bebas Neue', calibre, Leadgen;
+    font-weight: normal;
+
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -78,7 +99,7 @@ export default createGlobalStyle`
     font-size: 7.5rem;
     line-height: .7166666667;
     font-weight: 900;
-    font-family: serif;
+    font-family: calibre;
   }
 
   a {

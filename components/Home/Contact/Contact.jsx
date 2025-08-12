@@ -13,25 +13,22 @@ const Contact = () => {
         <div className="column">
           <a
             className="contact-text"
-            href="tel:+1.902.417.0634"
+            href="tel:+1.925.483.4553"
             onMouseEnter={addCursorBorder}
             onMouseLeave={removeCursorBorder}
           >
-            +1.902.417.0634
+            +1.925.483.4553
           </a>
           <br />
           <a
             className="contact-text"
-            href="mailto:info@furrow.studio"
+            href="mailto:smirk.ca@gmail.com"
             onMouseEnter={addCursorBorder}
             onMouseLeave={removeCursorBorder}
           >
-            info@furrow.studio
+            SMiRK.ca@gmail.com
           </a>
         </div>
-        <address className="column contact-text">
-          15 Camburhill Ct Unit C<br /> Charlottetown, PE C1E 0E2
-        </address>
         <SocialMedia className="column" />
       </ContactSection>
     </AnimateOnScreen>

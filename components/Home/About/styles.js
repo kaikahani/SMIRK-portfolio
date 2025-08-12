@@ -75,7 +75,7 @@ export const AccordionToggle = styled.button`
   display: block;
   padding: 27px 0 0 35px;
   line-height: 15px;
-  color: ${({ theme }) => theme.colors.red};
+  color: ${({ theme }) => theme.colors.saffron};
 
   &:hover:not([aria-expanded='true']) {
     color: ${({ theme }) => theme.text};
@@ -104,7 +104,7 @@ export const AccordionToggle = styled.button`
     width: 18px;
     height: 4px;
     margin-top: 11.5px;
-    background: ${({ theme }) => theme.colors.red};
+    background: ${({ theme }) => theme.colors.saffron};
     transition: all 0.1s ease-in-out;
   }
 
@@ -141,7 +141,7 @@ export const AccordionContent = styled(motion.div)`
   line-height: 1.0714285714;
   letter-spacing: 0.5px;
   overflow: hidden;
-  color: ${({ theme }) => theme.colors.red};
+  color: ${({ theme }) => theme.colors.saffron};
 
   & p {
     margin: 6.1px 0 0;
