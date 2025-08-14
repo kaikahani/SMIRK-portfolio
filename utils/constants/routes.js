@@ -21,7 +21,7 @@ export default [
     id: 'through-my-eyes',
     title: 'through my eyes',
     path: '/projects/my-eyes',
-    video: 'free-stories1.mp4',
+    video: 'my-eyes-reel.mp4',
   },
   {
     id: 'kill-monotony',

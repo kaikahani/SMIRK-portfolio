@@ -171,22 +171,22 @@ const LemonMeringue = () => {
         <h2 className="inspiration__title">INSPIRATION</h2>
         <div className="inspiration__grid">
           <img
-            src="/pictures/jokerposter.jpeg"
+            src="/pictures/jokerposter.jpg"
             alt="Joker Poster"
             className="inspiration__image"
           />
           <img
-            src="/pictures/mementoposter.jpeg"
+            src="/pictures/mementoposter.jpg"
             alt="Memento Poster"
             className="inspiration__image"
           />
           <img
-            src="/pictures/twelvemokeysposter.jpeg"
+            src="/pictures/twelvemokeysposter.jpg"
             alt="Twelve Monkeys Poster"
             className="inspiration__image"
           />
           <img
-            src="/pictures/wavesposter.jpeg"
+            src="/pictures/wavesposter.jpg"
             alt="Waves Poster"
             className="inspiration__image"
           />
@@ -223,7 +223,7 @@ const LemonMeringue = () => {
               &times;
             </button>
             <video className="video-modal__video" controls autoPlay>
-              <source src="/videos/LMBUMPER.mp4" type="video/mp4" />
+              <source src="/videos/lmbumpnc.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
