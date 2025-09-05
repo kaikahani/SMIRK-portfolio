@@ -27,12 +27,8 @@ const FeaturedProject = () => {
   const controlsArrow = useAnimation();
   const theme = useStyledTheme();
   const [{ isMenuOpen }] = useMenuContext();
-  const {
-    addCursorColor,
-    resetCursorColor,
-    addCursorBorder,
-    removeCursorBorder,
-  } = useCursorStyle();
+  const { addCursorColor, resetCursorColor, addCursorBorder, removeCursorBorder } =
+    useCursorStyle();
   const isTabletView = useMediaQuery(
     ({ breakpoints }) => `(max-width:${breakpoints.sizes.tablet}px)`,
   );
@@ -76,10 +72,7 @@ const FeaturedProject = () => {
       <AnimateOnScreen>
         <motion.div>
           <Link href="projects/lemon-meringue" passHref>
-            <ProjectAnchor
-              onHoverStart={handleAnchorHoverStart}
-              onHoverEnd={handleAnchorHoverEnd}
-            >
+            <ProjectAnchor onHoverStart={handleAnchorHoverStart} onHoverEnd={handleAnchorHoverEnd}>
               <ProjectInfo>
                 <h3>Featured Project</h3>
                 <motion.div

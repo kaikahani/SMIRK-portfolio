@@ -3,20 +3,16 @@ import { useThemeContext } from '../../context/theme';
 import useCursorStyle from '../../hooks/useCursorStyle';
 import useStyledTheme from '../../hooks/useStyledTheme';
 
-const Logo = props => {
+const Logo = (props) => {
   const { buttonProps = {}, ...rootProps } = props;
 
   const theme = useStyledTheme();
   const [, dispatch] = useThemeContext();
-  const {
-    addCursorBorder,
-    removeCursorBorder,
-    addCursorColor,
-    resetCursorColor,
-  } = useCursorStyle();
+  const { addCursorBorder, removeCursorBorder, addCursorColor, resetCursorColor } =
+    useCursorStyle();
 
   const handleToggleTheme = React.useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
       dispatch({ type: 'TOGGLE_THEME' });
 

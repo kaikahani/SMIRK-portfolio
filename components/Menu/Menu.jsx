@@ -41,15 +41,9 @@ const Menu = () => {
   const [isHovering, setIsHovering] = React.useState(false);
   const theme = useStyledTheme();
   const [{ isMenuOpen }, dispatch] = useMenuContext();
-  const {
-    addCursorBorder,
-    removeCursorBorder,
-    addCursorColor,
-    resetCursorColor,
-  } = useCursorStyle();
-  const isMobile = useMediaQuery(
-    ({ breakpoints }) => `(max-width:${breakpoints.sizes.small}px)`,
-  );
+  const { addCursorBorder, removeCursorBorder, addCursorColor, resetCursorColor } =
+    useCursorStyle();
+  const isMobile = useMediaQuery(({ breakpoints }) => `(max-width:${breakpoints.sizes.small}px)`);
 
   const handleAnimationComplete = React.useCallback(() => {
     addCursorColor(theme.text);
@@ -60,7 +54,7 @@ const Menu = () => {
   }, [resetCursorColor]);
 
   const handleHoverStart = React.useCallback(
-    event => {
+    (event) => {
       addCursorBorder();
       setRevealVideo(event.target.name);
     },
@@ -105,7 +99,7 @@ const Menu = () => {
                 onHoverStart={() => setIsHovering(true)}
                 onHoverEnd={() => setIsHovering(false)}
               >
-                {routes.map(route => (
+                {routes.map((route) => (
                   <motion.li
                     key={route.id}
                     variants={listItemsVariants}
@@ -116,9 +110,7 @@ const Menu = () => {
                         name={route.id}
                         onHoverStart={handleHoverStart}
                         onHoverEnd={handleHoverEnd}
-                        onClick={() =>
-                          dispatch({ type: 'TOGGLE_MENU', payload: false })
-                        }
+                        onClick={() => dispatch({ type: 'TOGGLE_MENU', payload: false })}
                         custom={{ isMobile, color: theme.text }}
                         initial="initial"
                         whileHover="hover"
@@ -175,7 +167,7 @@ const Menu = () => {
                 initial="show"
                 animate={isHovering ? 'hidden' : 'show'}
               />
-              {routes.map(route => (
+              {routes.map((route) => (
                 <Video
                   key={route.id}
                   src={`/videos/${route.video}`}

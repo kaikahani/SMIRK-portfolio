@@ -15,7 +15,7 @@ const variants = {
   },
 };
 
-const Backdrop = props => {
+const Backdrop = (props) => {
   React.useEffect(() => {
     const overflowY = window.getComputedStyle(document.body).overflowY;
     document.body.style.overflowY = 'hidden';

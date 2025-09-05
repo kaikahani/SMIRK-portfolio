@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head';
 import Cursor from '../../components/Cursor'; // Adjust path if needed
 
 export async function getStaticProps() {
@@ -26,7 +26,7 @@ const FahReel = () => {
     const hide = () => {
       cursor.style.display = 'none';
     };
-    const moveCursor = e => {
+    const moveCursor = (e) => {
       cursor.style.left = `${e.clientX}px`;
       cursor.style.top = `${e.clientY}px`;
     };
@@ -94,43 +94,29 @@ const FahReel = () => {
       <section className="description">
         <div className="description__wrapper">
           <div className="description__media">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="description__video"
-            >
+            <video autoPlay muted loop playsInline className="description__video">
               <source src="/videos/longway-reel.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div className="description__container">
             <p>
-              The camera is a passport. A direct passage into new worlds, and
-              the thread that pulls others inside with us. Film allows us bend
-              reality, stretch time, and paint with light as well as darkness.
-              The cross section between our love for surrealism and our need to
+              The camera is a passport. A direct passage into new worlds, and the thread that pulls
+              others inside with us. Film allows us bend reality, stretch time, and paint with light
+              as well as darkness. The cross section between our love for surrealism and our need to
               <span style={{ color: 'red' }}> spark </span>
               <span style={{ color: '#F5C242' }}> joy </span>
               , Where dream logic is as true as daylight.
               <br />
               <br />
-              Being behind the lens is more than composition, it is
-              world-building in motion. Stitching together color, sound, idea,
-              and movement until it breathes. This reel is a glimpse into our
-              obsession: to create places you have never been but somehow
-              remember, with stories that stay with you forever.
+              Being behind the lens is more than composition, it is world-building in motion.
+              Stitching together color, sound, idea, and movement until it breathes. This reel is a
+              glimpse into our obsession: to create places you have never been but somehow remember,
+              with stories that stay with you forever.
             </p>
           </div>
           <div className="description__media">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="description__video"
-            >
+            <video autoPlay muted loop playsInline className="description__video">
               <source src="/videos/longway-reel-2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -138,23 +124,29 @@ const FahReel = () => {
         </div>
 
         <div className="description__gallery">
-          <img src="/pictures/reel-1.jpg" alt="Reel visual 1" />
-          <img src="/pictures/reel-3.jpg" alt="Reel visual 2" />
-          <img src="/pictures/reel-2.jpg" alt="Reel visual 3" />
-          <img src="/pictures/reel-5.jpg" alt="Reel visual 4" />
-          <img src="/pictures/reel-4.jpg" alt="Reel visual 5" />
-          <img src="/pictures/reel-6.jpg" alt="Reel visual 6" />
-          <img
+          <Image src="/pictures/reel-1.jpg" alt="Reel visual 1" width={600} height={400} />
+          <Image src="/pictures/reel-3.jpg" alt="Reel visual 2" width={600} height={400} />
+          <Image src="/pictures/reel-2.jpg" alt="Reel visual 3" width={600} height={400} />
+          <Image src="/pictures/reel-5.jpg" alt="Reel visual 4" width={600} height={400} />
+          <Image src="/pictures/reel-4.jpg" alt="Reel visual 5" width={600} height={400} />
+          <Image src="/pictures/reel-6.jpg" alt="Reel visual 6" width={600} height={400} />
+          <Image
             src="/pictures/LM-Socials-Garage-Day-2.jpg"
             alt="Reel visual 7"
+            width={600}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/Lm-second-day-socials-9.jpg"
             alt="Reel visual 8"
+            width={600}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/LM-Socials-Garage-Day-1.jpg"
             alt="Reel visual 9"
+            width={600}
+            height={400}
           />
         </div>
       </section>
@@ -163,7 +155,7 @@ const FahReel = () => {
       <section className="credits">
         <h2>Credits</h2>
         <div className="credits__grid">
-          {[0, 1, 2].map(row => (
+          {[0, 1, 2].map((row) => (
             <div className="credits__row" key={row}>
               {credits.slice(row * 5, row * 5 + 5).map((credit, i) => (
                 <div className="credit" key={i}>
@@ -183,43 +175,51 @@ const FahReel = () => {
       <section className="inspiration">
         <h2 className="inspiration__title">INSPIRATION</h2>
         <div className="inspiration__grid">
-          <img
+          <Image
             src="/pictures/inspo1.png"
             alt="mood board 1"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/inspo2.png"
             alt="mood board 2"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/inspo5.png"
             alt="mood board 3"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/inspo6.png"
             alt="mood board 4"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
         </div>
       </section>
 
       <footer className="project-footer">
         <div className="project-footer__nav">
-          <Link href="/projects/lemon-meringue" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="prev">
-              ←
-            </a>
+          <Link
+            href="/projects/lemon-meringue"
+            className="project-footer__arrow"
+            data-cursor="prev"
+          >
+            ←
           </Link>
           <div className="project-footer__center">
             <h3 className="project-footer__label">CHOOSE ONE</h3>
           </div>
-          <Link href="/projects/cgkm-terminal" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="next">
-              →
-            </a>
+          <Link href="/projects/cgkm-terminal" className="project-footer__arrow" data-cursor="next">
+            →
           </Link>
         </div>
       </footer>
@@ -235,8 +235,10 @@ const FahReel = () => {
             >
               &times;
             </button>
+            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <video className="video-modal__video" controls autoPlay>
               <source src="/videos/smirkreel3.mp4" type="video/mp4" />
+              <track kind="captions" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -279,11 +281,7 @@ const FahReel = () => {
         .hero__overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.8)
-          );
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
           z-index: 2;
         }
 

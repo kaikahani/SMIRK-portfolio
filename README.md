@@ -19,9 +19,11 @@ This project is based on [Akram's](https://github.com/wrongakram) outstanding Aw
 ---
 
 # 🔥 Live version
+
 Check it out [here](https://awwwards-rebuilt-furrow.vercel.app)
 
 # ⚛ About the project
+
 This project is built using Nextjs, Context API, styled-components, framer-motion, canvas and more!
 
 # 💻 Running the project
@@ -33,6 +35,7 @@ yarn dev
 ```
 
 ### With NPM
+
 ```bash
 npm run dev
 ```

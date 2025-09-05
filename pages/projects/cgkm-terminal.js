@@ -16,7 +16,7 @@ const CGKMLocked = () => {
   const [unlocked, setUnlocked] = useState(false);
   const correctPassword = 'freedom'; // change as needed
 
-  const handleUnlock = e => {
+  const handleUnlock = (e) => {
     e.preventDefault();
     if (password.toLowerCase() === correctPassword.toLowerCase()) {
       setUnlocked(true);
@@ -40,7 +40,7 @@ const CGKMLocked = () => {
               type="password"
               placeholder="Enter password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit">Unlock</button>
           </form>
@@ -55,18 +55,14 @@ const CGKMLocked = () => {
       {/* Footer Navigation */}
       <footer className="project-footer">
         <div className="project-footer__nav">
-          <Link href="/projects/previous" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="prev">
-              ←
-            </a>
+          <Link href="/projects/previous" className="project-footer__arrow" data-cursor="prev">
+            0
           </Link>
           <div className="project-footer__center">
             <h3 className="project-footer__label">TERMINAL</h3>
           </div>
-          <Link href="/projects/next" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="next">
-              →
-            </a>
+          <Link href="/projects/next" className="project-footer__arrow" data-cursor="next">
+            2
           </Link>
         </div>
       </footer>

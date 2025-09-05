@@ -16,20 +16,11 @@ const factory = () => {
   let _data = {};
 
   const _handleEraserProgress = (currentX, currentY) => {
-    const {
-      colParts,
-      numParts,
-      completeRatio,
-      enabled,
-      size,
-      onComplete,
-      onProgress,
-    } = _data;
+    const { colParts, numParts, completeRatio, enabled, size, onComplete, onProgress } = _data;
 
     if (!enabled) return;
 
-    let p =
-      Math.floor(currentX / size) + Math.floor(currentY / size) * colParts;
+    let p = Math.floor(currentX / size) + Math.floor(currentY / size) * colParts;
 
     if (p >= 0 && p < numParts) {
       _data.ratio += _data.parts[p];
@@ -53,7 +44,7 @@ const factory = () => {
     }
   };
 
-  const _onMouseMove = event => {
+  const _onMouseMove = (event) => {
     event.preventDefault();
 
     const { enabled, posX, posY, scaleRatio, touchX, touchY } = _data;
@@ -72,7 +63,7 @@ const factory = () => {
     _data.touchY = currentY;
   };
 
-  const _onMouseDown = event => {
+  const _onMouseDown = (event) => {
     event.preventDefault();
 
     const { enabled, posX, posY, scaleRatio } = _data;
@@ -95,7 +86,7 @@ const factory = () => {
     _canvas.addEventListener('mousemove', _onMouseMove);
   };
 
-  const _onMouseClick = event => {
+  const _onMouseClick = (event) => {
     event.preventDefault();
 
     const { enabled, posX, posY, scaleRatio } = _data;
@@ -120,9 +111,7 @@ const factory = () => {
 
   const init = (source, options = {}) => {
     if (!source) {
-      throw new Error(
-        'No source element provided. It must be an HTML canvas element.',
-      );
+      throw new Error('No source element provided. It must be an HTML canvas element.');
     }
 
     const currentOptions = { ...DEFAULT_OPTIONS, ...options };

@@ -3,7 +3,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import AppBar from '../../components/AppBar';
 
 const variants = {
-  hidden: isTabletView => ({ y: isTabletView ? -81 : -131 }),
+  hidden: (isTabletView) => ({ y: isTabletView ? -81 : -131 }),
   show: { y: 0 },
 };
 

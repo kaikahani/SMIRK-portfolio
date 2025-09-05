@@ -5,14 +5,14 @@ const StickyCursor = ({ children: childrenProp, sticky = true }) => {
   const childRef = React.useRef(null);
   const { lockCursorPosition } = useCursorStyle();
 
-  const children = React.Children.map(childrenProp, child => {
+  const children = React.Children.map(childrenProp, (child) => {
     if (!React.isValidElement(child)) {
       return null;
     }
 
     const { onMouseEnter, onMouseLeave } = child.props;
 
-    const handleMouseEnter = event => {
+    const handleMouseEnter = (event) => {
       if (!childRef.current) return;
 
       const position = childRef.current.getBoundingClientRect();
@@ -26,7 +26,7 @@ const StickyCursor = ({ children: childrenProp, sticky = true }) => {
       }
     };
 
-    const handleMouseLeave = event => {
+    const handleMouseLeave = (event) => {
       if (!childRef.current) return;
 
       lockCursorPosition(null);
@@ -36,7 +36,7 @@ const StickyCursor = ({ children: childrenProp, sticky = true }) => {
       }
     };
 
-    const handleRef = node => {
+    const handleRef = (node) => {
       // Keep your own reference
       childRef.current = node;
 

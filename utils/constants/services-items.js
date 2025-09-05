@@ -15,13 +15,7 @@ export default [
   ],
   [
     'Video Production',
-    [
-      'Principle Photography',
-      'Production Management',
-      'Crew',
-      'Dailies',
-      'LTO-Archiving',
-    ],
+    ['Principle Photography', 'Production Management', 'Crew', 'Dailies', 'LTO-Archiving'],
   ],
   [
     'Post-Production',

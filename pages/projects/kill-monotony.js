@@ -33,11 +33,10 @@ const KillMonotony = () => {
           <br />
           that turns heads.
         </h1>
-
         <p className="intro">
-          At SMiRK we build worlds, not campaigns. We align story, sound, and
-          style into art that is impossible to ignore. We&apos;re looking for purple
-          cows. No gimmicks. No noise. Just clarity.
+          At SMiRK we build worlds, not campaigns. We align story, sound, and style into art that is
+          impossible to ignore. We&apos;re looking for purple cows. No gimmicks. No noise. Just
+          clarity.
         </p>
 
         <a
@@ -51,18 +50,10 @@ const KillMonotony = () => {
 
         {/* Kill Monotony text */}
         <div className="kill-monotony">
-          <motion.span
-            variants={itemTitleAnimation}
-            initial="hidden"
-            animate="visible"
-          >
+          <motion.span variants={itemTitleAnimation} initial="hidden" animate="visible">
             KILL
           </motion.span>{' '}
-          <motion.span
-            variants={itemTitleAnimation}
-            initial="hidden"
-            animate="visible"
-          >
+          <motion.span variants={itemTitleAnimation} initial="hidden" animate="visible">
             MONO
             <span style={{ color: '#FE0200', display: 'inline' }}>TONY</span>
           </motion.span>
@@ -72,18 +63,18 @@ const KillMonotony = () => {
       {/* Footer Navigation */}
       <footer className="project-footer">
         <div className="project-footer__nav">
-          <Link href="/projects/my-eyes" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="prev">
-              ←
-            </a>
+          <Link href="/projects/my-eyes" className="project-footer__arrow" data-cursor="prev">
+            ←
           </Link>
           <div className="project-footer__center">
             <h3 className="project-footer__label">CHOOSE ONE</h3>
           </div>
-          <Link href="/projects/lemon-meringue" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="next">
-              →
-            </a>
+          <Link
+            href="/projects/lemon-meringue"
+            className="project-footer__arrow"
+            data-cursor="next"
+          >
+            →
           </Link>
         </div>
       </footer>
@@ -112,16 +103,16 @@ const KillMonotony = () => {
           padding: 18vh 20px 8vh;
         }
         .headline {
-          font-family: 'Bebas Neue', ui-sans-serif, system-ui, -apple-system,
-            Segoe UI, Roboto, 'Helvetica Neue', Arial;
+          font-family: 'Bebas Neue', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+            'Helvetica Neue', Arial;
           font-weight: 800;
           margin: 0 0 24px 0;
           line-height: 0.98;
           font-size: clamp(40px, 8vw, 92px);
         }
         .intro {
-          font-family: ui-sans-serif, system-ui, -apple-system, 'SF Pro Text',
-            Segoe UI, Roboto, 'Helvetica Neue', Arial;
+          font-family: ui-sans-serif, system-ui, -apple-system, 'SF Pro Text', Segoe UI, Roboto,
+            'Helvetica Neue', Arial;
           color: var(--muted);
           margin: 0 0 40px 0;
           line-height: 1.7;
@@ -137,8 +128,7 @@ const KillMonotony = () => {
           color: var(--fg);
           font-weight: 600;
           letter-spacing: 0.02em;
-          transition: transform 0.2s ease, background 0.2s ease,
-            border-color 0.2s ease;
+          transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
         .cta:hover {
           transform: translateY(-1px);

@@ -10,7 +10,7 @@ const Cursor = ({ hidden }) => {
   useEffect(() => {
     if (hidden) return;
 
-    const onMouseMove = event => {
+    const onMouseMove = (event) => {
       const x = position?.x ?? event.clientX;
       const y = position?.y ?? event.clientY;
       if (!Number.isFinite(x) || !Number.isFinite(y)) return;

@@ -29,12 +29,12 @@ const AnimateOnScreen = ({ children: childrenProp }) => {
     }
   }, [animation, inView, inViewRef]);
 
-  const children = React.Children.map(childrenProp, child => {
+  const children = React.Children.map(childrenProp, (child) => {
     if (!React.isValidElement(child)) {
       return null;
     }
 
-    const handleRef = node => {
+    const handleRef = (node) => {
       // Keep your own reference
       inViewRef(node);
 

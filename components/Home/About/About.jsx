@@ -15,7 +15,7 @@ const About = () => {
   const { addCursorBorder, removeCursorBorder } = useCursorStyle();
 
   const handleMouseEnter = React.useCallback(
-    curr => {
+    (curr) => {
       if (curr === selectedItem) return;
 
       addCursorBorder();
@@ -24,7 +24,7 @@ const About = () => {
   );
 
   const handleMouseLeave = React.useCallback(
-    curr => {
+    (curr) => {
       if (curr === selectedItem) return;
 
       removeCursorBorder();
@@ -37,16 +37,15 @@ const About = () => {
       <ContentSection>
         <TextWrapper>
           <h2>
-            SMiRK is a creative direction agency sparking joy and helping
-            artists create art that reflects who they truly are.
+            SMiRK is a creative direction agency sparking joy and helping artists create art that
+            reflects who they truly are.
           </h2>
           <p>
-            At SMiRK, we don&apos;t stop until we uncover what makes your story
-            unforgettable. We help artists move out of their own way and into
-            their creative power. Whether it&apos;s creative direction, content
-            production, brand strategy, or rollout support, we meet you where
-            you are. We work with artists, agencies, and teams ready to push
-            boundaries and build something real.
+            At SMiRK, we don&apos;t stop until we uncover what makes your story unforgettable. We
+            help artists move out of their own way and into their creative power. Whether it&apos;s
+            creative direction, content production, brand strategy, or rollout support, we meet you
+            where you are. We work with artists, agencies, and teams ready to push boundaries and
+            build something real.
             <br />
             <br />
             Our goal?

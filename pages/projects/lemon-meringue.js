@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head';
 import Cursor from '../../components/Cursor'; // Adjust path if needed
 
 export async function getStaticProps() {
@@ -26,7 +26,7 @@ const LemonMeringue = () => {
     const hide = () => {
       cursor.style.display = 'none';
     };
-    const moveCursor = e => {
+    const moveCursor = (e) => {
       cursor.style.left = `${e.clientX}px`;
       cursor.style.top = `${e.clientY}px`;
     };
@@ -92,41 +92,27 @@ const LemonMeringue = () => {
       <section className="description">
         <div className="description__wrapper">
           <div className="description__media">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="description__video"
-            >
+            <video autoPlay muted loop playsInline className="description__video">
               <source src="/videos/directing1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div className="description__container">
             <p>
-              Lemon Meringue started as an EP but quickly grew into a film. A
-              world, written, performed, engineered, and built by Shorty-G. The
-              prologue to a storyworld where sound is both resistance and
-              resolve. Over 10,000 streams organically. Hundreds of new
+              Lemon Meringue started as an EP but quickly grew into a film. A world, written,
+              performed, engineered, and built by Shorty-G. The prologue to a storyworld where sound
+              is both resistance and resolve. Over 10,000 streams organically. Hundreds of new
               listeners. The true beginning.
               <br />
               <br />
-              Front to back, the album is BACKWARDS. LM follows our protagonist,
-              Shorty, as she breaks free from an institution after being
-              detained for crimes she didn&apos;t commit. Shorty, running for her
-              life, descends upon where the story should have begun. The songs
-              canonically lay out the story of how Shorty lost her mind.
+              Front to back, the album is BACKWARDS. LM follows our protagonist, Shorty, as she
+              breaks free from an institution after being detained for crimes she didn&apos;t
+              commit. Shorty, running for her life, descends upon where the story should have begun.
+              The songs canonically lay out the story of how Shorty lost her mind.
             </p>
           </div>
           <div className="description__media">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="description__video"
-            >
+            <video autoPlay muted loop playsInline className="description__video">
               <source src="/videos/directing2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -134,15 +120,15 @@ const LemonMeringue = () => {
         </div>
 
         <div className="description__gallery">
-          <img src="/pictures/pie1.jpeg" alt="LM visual 1" />
-          <img src="/pictures/pie2.jpeg" alt="LM visual 2" />
-          <img src="/pictures/mugshot2.jpeg" alt="LM visual 3" />
-          <img src="/pictures/lminside1.jpeg" alt="LM visual 4" />
-          <img src="/pictures/lmoutside1.jpeg" alt="LM visual 5" />
-          <img src="/pictures/lminside2.jpeg" alt="LM visual 6" />
-          <img src="/pictures/mugshot.jpeg" alt="LM visual 7" />
-          <img src="/pictures/mugshot4.jpeg" alt="LM visual 8" />
-          <img src="/pictures/mugshot3.jpeg" alt="LM visual 9" />
+          <Image src="/pictures/pie1.jpeg" alt="LM visual 1" width={600} height={400} />
+          <Image src="/pictures/pie2.jpeg" alt="LM visual 2" width={600} height={400} />
+          <Image src="/pictures/mugshot2.jpeg" alt="LM visual 3" width={600} height={400} />
+          <Image src="/pictures/lminside1.jpeg" alt="LM visual 4" width={600} height={400} />
+          <Image src="/pictures/lmoutside1.jpeg" alt="LM visual 5" width={600} height={400} />
+          <Image src="/pictures/lminside2.jpeg" alt="LM visual 6" width={600} height={400} />
+          <Image src="/pictures/mugshot.jpeg" alt="LM visual 7" width={600} height={400} />
+          <Image src="/pictures/mugshot4.jpeg" alt="LM visual 8" width={600} height={400} />
+          <Image src="/pictures/mugshot3.jpeg" alt="LM visual 9" width={600} height={400} />
         </div>
       </section>
 
@@ -150,7 +136,7 @@ const LemonMeringue = () => {
       <section className="credits">
         <h2>Credits</h2>
         <div className="credits__grid">
-          {[0, 1].map(row => (
+          {[0, 1].map((row) => (
             <div className="credits__row" key={row}>
               {credits.slice(row * 5, row * 5 + 5).map((credit, i) => (
                 <div className="credit" key={i}>
@@ -170,43 +156,47 @@ const LemonMeringue = () => {
       <section className="inspiration">
         <h2 className="inspiration__title">INSPIRATION</h2>
         <div className="inspiration__grid">
-          <img
+          <Image
             src="/pictures/jokerposter.jpg"
             alt="Joker Poster"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/mementoposter.jpg"
             alt="Memento Poster"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/twelvemokeysposter.jpg"
             alt="Twelve Monkeys Poster"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
-          <img
+          <Image
             src="/pictures/wavesposter.jpg"
             alt="Waves Poster"
             className="inspiration__image"
+            width={400}
+            height={400}
           />
         </div>
       </section>
 
       <footer className="project-footer">
         <div className="project-footer__nav">
-          <Link href="/projects/kill-monotony" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="prev">
-              ←
-            </a>
+          <Link href="/projects/kill-monotony" className="project-footer__arrow" data-cursor="prev">
+            0
           </Link>
           <div className="project-footer__center">
             <h3 className="project-footer__label">CHOOSE ONE</h3>
           </div>
-          <Link href="/projects/fah-reel" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="next">
-              →
-            </a>
+          <Link href="/projects/fah-reel" className="project-footer__arrow" data-cursor="next">
+            2
           </Link>
         </div>
       </footer>
@@ -222,8 +212,10 @@ const LemonMeringue = () => {
             >
               &times;
             </button>
+            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <video className="video-modal__video" controls autoPlay>
               <source src="/videos/lmbumpnc.mp4" type="video/mp4" />
+              <track kind="captions" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -265,11 +257,7 @@ const LemonMeringue = () => {
         .hero__overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.8)
-          );
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
           z-index: 2;
         }
 

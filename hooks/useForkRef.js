@@ -18,7 +18,7 @@ const useForkRef = (refA, refB) => {
     if (refA == null && refB == null) {
       return null;
     }
-    return refValue => {
+    return (refValue) => {
       setRef(refA, refValue);
       setRef(refB, refValue);
     };

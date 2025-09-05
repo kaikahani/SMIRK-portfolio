@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeContext } from 'styled-components';
 
-const useMediaQuery = queryInput => {
+const useMediaQuery = (queryInput) => {
   const theme = React.useContext(ThemeContext);
   let query = typeof queryInput === 'function' ? queryInput(theme) : queryInput;
   query = query.replace(/^@media( ?)/m, '');

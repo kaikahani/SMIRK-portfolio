@@ -34,14 +34,7 @@ const Banner = () => {
   return (
     <BannerSection style={{ height: windowSize.height }}>
       <VideoContainer>
-        <video
-          src="/videos/lmbumpnc.mp4"
-          height="100%"
-          width="100%"
-          loop
-          autoPlay
-          muted
-        />
+        <video src="/videos/lmbumpnc.mp4" height="100%" width="100%" loop autoPlay muted />
       </VideoContainer>
       <CanvasEraser
         ref={canvasRef}
@@ -52,11 +45,7 @@ const Banner = () => {
         onMouseEnter={addCursorBorder}
         onMouseLeave={removeCursorBorder}
       />
-      <BannerTitle
-        variants={titleAnimation}
-        initial="initial"
-        animate="animate"
-      >
+      <BannerTitle variants={titleAnimation} initial="initial" animate="animate">
         <motion.span variants={itemTitleAnimation}>KILL</motion.span>
         <motion.span variants={itemTitleAnimation}>
           MONO<span style={{ color: '#FE0200', display: 'inline' }}>TONY</span>

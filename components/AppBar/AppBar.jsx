@@ -14,13 +14,8 @@ const variants = {
   show: { y: 0 },
 };
 
-const AppBar = props => {
-  const {
-    direction = 'down',
-    offset = 105,
-    style: styleProp = {},
-    ...rootProps
-  } = props;
+const AppBar = (props) => {
+  const { direction = 'down', offset = 105, style: styleProp = {}, ...rootProps } = props;
 
   const [hidden, setHidden] = React.useState(false);
   const [hovered, setHovered] = React.useState(false);

@@ -42,9 +42,7 @@ export const ThemeContextProvider = ({ children }) => {
     });
   }, []);
 
-  return (
-    <ThemeContext.Provider value={store}>{children}</ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={store}>{children}</ThemeContext.Provider>;
 };
 
 export const useThemeContext = () => {

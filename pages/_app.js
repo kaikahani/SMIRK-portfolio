@@ -12,12 +12,10 @@ import AppBar from '../components/AppBar';
 import Cursor from '../components/Cursor';
 import Menu from '../components/Menu';
 
-
 const themes = {
   dark: darkTheme,
   light: lightTheme,
 };
-
 const ThemedApp = ({ children }) => {
   const [state] = useThemeContext();
   const currentTheme = themes[state.theme];
@@ -36,15 +34,9 @@ const App = ({ Component, pageProps }) => {
   const router = useRouter();
   const hideCursorOnLM = router.pathname.includes('/projects/lemon-meringue');
   const showCursorOnFooter =
-    router.pathname.includes('/projects/lemon-meringue') &&
-    pageProps?.showFooterCursor;
+    router.pathname.includes('/projects/lemon-meringue') && pageProps?.showFooterCursor;
 
-  <Cursor
-    hidden={
-      !showCursorOnFooter &&
-      router.pathname.includes('/projects/lemon-meringue')
-    }
-  />;
+  <Cursor hidden={!showCursorOnFooter && router.pathname.includes('/projects/lemon-meringue')} />;
 
   return (
     <>

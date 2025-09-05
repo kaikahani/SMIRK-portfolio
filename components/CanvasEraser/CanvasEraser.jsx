@@ -30,16 +30,7 @@ const CanvasEraser = (props, ref) => {
       width,
       height,
     }),
-    [
-      background,
-      completeRatio,
-      enabled,
-      onComplete,
-      onProgress,
-      size,
-      width,
-      height,
-    ],
+    [background, completeRatio, enabled, onComplete, onProgress, size, width, height],
   );
 
   React.useEffect(() => {

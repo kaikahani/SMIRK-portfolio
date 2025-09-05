@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import Cursor from '../../components/Cursor'; // Adjust path if needed
@@ -9,10 +10,7 @@ export async function getStaticProps() {
   };
 }
 
-const IMAGES = Array.from(
-  { length: 30 },
-  (_, i) => `/pictures/photo${i + 1}.jpg`,
-);
+const IMAGES = Array.from({ length: 30 }, (_, i) => `/pictures/photo${i + 1}.jpg`);
 
 const MyEyes = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +28,7 @@ const MyEyes = () => {
     const hide = () => {
       if (!isModalOpen) cursor.style.display = 'none';
     };
-    const moveCursor = e => {
+    const moveCursor = (e) => {
       cursor.style.left = `${e.clientX}px`;
       cursor.style.top = `${e.clientY}px`;
     };
@@ -55,7 +53,7 @@ const MyEyes = () => {
     };
   }, [isModalOpen]);
 
-  const openModal = useCallback(idx => {
+  const openModal = useCallback((idx) => {
     setCurrentIndex(idx);
     setIsModalOpen(true);
   }, []);
@@ -65,17 +63,17 @@ const MyEyes = () => {
   }, []);
 
   const nextImage = useCallback(() => {
-    setCurrentIndex(i => (i + 1) % IMAGES.length);
+    setCurrentIndex((i) => (i + 1) % IMAGES.length);
   }, []);
 
   const prevImage = useCallback(() => {
-    setCurrentIndex(i => (i - 1 + IMAGES.length) % IMAGES.length);
+    setCurrentIndex((i) => (i - 1 + IMAGES.length) % IMAGES.length);
   }, []);
 
   // Keyboard controls for modal
   useEffect(() => {
     if (!isModalOpen) return;
-    const onKey = e => {
+    const onKey = (e) => {
       if (e.key === 'Escape') closeModal();
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
@@ -93,9 +91,7 @@ const MyEyes = () => {
       {/* Top Description */}
       <section className="description-top">
         <h1 className="description-title">MY EYES</h1>
-        <p className="description-text">
-          A curated selection of moments from my lens.
-        </p>
+        <p className="description-text">A curated selection of moments from my lens.</p>
       </section>
 
       {/* Photo Grid */}
@@ -107,7 +103,7 @@ const MyEyes = () => {
             onClick={() => openModal(i)}
             aria-label={`Open photo ${i + 1}`}
           >
-            <img src={src} alt={`Photography ${i + 1}`} loading="lazy" />
+            <Image src={src} alt={`Photography ${i + 1}`} width={600} height={400} loading="lazy" />
           </button>
         ))}
       </section>
@@ -115,18 +111,14 @@ const MyEyes = () => {
       {/* Footer Navigation */}
       <footer className="project-footer">
         <div className="project-footer__nav">
-          <Link href="/projects/cgkm-terminal" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="prev">
-              ←
-            </a>
+          <Link href="/projects/cgkm-terminal" className="project-footer__arrow" data-cursor="prev">
+            0
           </Link>
           <div className="project-footer__center">
             <h3 className="project-footer__label">CHOOSE ONE</h3>
           </div>
-          <Link href="/projects/kill-monotony" legacyBehavior>
-            <a className="project-footer__arrow" data-cursor="next">
-              →
-            </a>
+          <Link href="/projects/kill-monotony" className="project-footer__arrow" data-cursor="next">
+            2
           </Link>
         </div>
       </footer>
@@ -134,11 +126,7 @@ const MyEyes = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="photo-modal" role="dialog" aria-modal="true">
-          <button
-            className="photo-modal__close"
-            onClick={closeModal}
-            aria-label="Close"
-          >
+          <button className="photo-modal__close" onClick={closeModal} aria-label="Close">
             ×
           </button>
           <button
@@ -148,10 +136,12 @@ const MyEyes = () => {
           >
             ‹
           </button>
-          <img
+          <Image
             className="photo-modal__img"
             src={IMAGES[currentIndex]}
-            alt={`Photo ${currentIndex + 1}`}
+            alt={`Gallery ${currentIndex + 1}`}
+            width={600}
+            height={400}
           />
           <button
             className="photo-modal__nav photo-modal__nav--next"
